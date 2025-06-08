@@ -34,10 +34,7 @@
       </ul>
   @endif
   <main class="h-[90dvh] w-full flex justify-center align-middle">
-  @if (true)
-    {{ Session::get('user_name') }}
-     <h1></h1>
-@endif
+
     <div class="h-fit w-fit shadow-black shadow-md self-center   p-5 rounded-[2em]">
 
       <form action="{{route('user.login')}}" method="post" class="h-fit w-full flex flex-col gap-5 justify-center items-center">

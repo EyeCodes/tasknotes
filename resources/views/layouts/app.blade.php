@@ -19,17 +19,17 @@
       <nav>
         <ul class="flex decoration-0 items-center">
           <li>
-              <i class="fa-solid fa-circle-half-stroke text-2xl pr-5 pl-5"></i>
+              <i class="fa-solid fa-circle-half-stroke theme text-2xl pr-5 pl-5"></i>
           </li>
           <li>
-            <i class="fa-solid fa-right-from-bracket text-2xl pr-5 pl-5 text-[#590c7a] hover:text-red-500"></i>
+              <a href="{{route('user.logout')}}"> <i class="fa-solid fa-right-from-bracket text-2xl pr-5 pl-5 text-[#590c7a] hover:text-red-500"></i></a>
             {{-- <i class="fa-solid fa-circle-user text-4xl pr-5 pl-5"></i> --}}
           </li>
         </ul>
       </nav>
     </div>
   </header>
-  <main class="h-[80dvh] w-screen flex flex-col gap-2 p-6">
+  <main class="h-[80dvh] w-screen bg-backgrond flex flex-col gap-2 p-6">
     <div class="h-fit w-full border-2 border-white-solid rounded-full grid grid-cols-2 overflow-hidden">
       <button class="h-full w-full bg-[#590c7a] p-2"><span class="font-bold text-white">TASK</span></button>
       <button class="h-full w-full bg-none p-2"><span class="font-bold">GROUP TASK</span></button>
@@ -40,10 +40,6 @@
         <h2 class="h-fit font-bold flex align-middle ">ADD TASK<i class="fa-solid fa-square-plus text-2xl  text-center align-middle text-[#590c7a] pl-2"></i></h2>
       </div>
       <div>
-     @if (true)
-    {{ Session::get('user_name') }}
-     <h1></h1>
-@endif
           {{--add via contents/yield --}}
           @yield('content')
       </div>

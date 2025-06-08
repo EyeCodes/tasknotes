@@ -10,7 +10,8 @@ class TasksController extends Controller
 
     public function index(){
         $addtaskmodular = 'hidden';
-        return view('layouts/app');
+        $darkmode = '#343038';
+        return view('layouts/app',['darkmode'=>'#343038']);
     }
 
     public function insert(Request $request){

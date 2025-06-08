@@ -1,27 +1,15 @@
 @import 'tailwindcss';
 @import "@fortawesome/fontawesome-free/css/all.css";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
+@custom-variant dark (&:where(.dark, .dark *));
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
 @source '../**/*.js';
-/* 
+
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
-} */
-
-:root{
-    --primary: ##590c7a;
-    --background: #fbfafc;
-    --text: #1c1b1c;
+        --bg-ff:  #590c7a;
 }
-
-.dark{
-        --primary: ##590c7a;
-    --background: #2d2b2e;
-    --text: #f8f0ff;
-}
-

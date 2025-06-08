@@ -10,11 +10,4 @@ export default defineConfig({
         }),
         tailwindcss(),
     ],
-    theme: {
-        extend:{
-            colors:{   
-                backgrond: '#704196',
-            },
-        },
-    },
 });

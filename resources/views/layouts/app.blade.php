@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+ <link href="/src/app.css" rel="stylesheet">
    <!-- Styles / Scripts -->
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
             @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -19,7 +19,7 @@
       <nav>
         <ul class="flex decoration-0 items-center">
           <li>
-              <i class="fa-solid fa-circle-half-stroke theme text-2xl pr-5 pl-5"></i>
+              <i class="fa-solid fa-circle-half-stroke text-2xl pr-5 pl-5" id="theme"></i>
           </li>
           <li>
               <a href="{{route('user.logout')}}"> <i class="fa-solid fa-right-from-bracket text-2xl pr-5 pl-5 text-[#590c7a] hover:text-red-500"></i></a>
@@ -29,7 +29,7 @@
       </nav>
     </div>
   </header>
-  <main class="h-[80dvh] w-screen bg-backgrond flex flex-col gap-2 p-6">
+  <main class="h-[80dvh] w-screen dark:bg-amber-200 flex flex-col gap-2 p-6">
     <div class="h-fit w-full border-2 border-white-solid rounded-full grid grid-cols-2 overflow-hidden">
       <button class="h-full w-full bg-[#590c7a] p-2"><span class="font-bold text-white">TASK</span></button>
       <button class="h-full w-full bg-none p-2"><span class="font-bold">GROUP TASK</span></button>

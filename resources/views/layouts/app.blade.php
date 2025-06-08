@@ -22,7 +22,8 @@
               <i class="fa-solid fa-circle-half-stroke text-2xl pr-5 pl-5"></i>
           </li>
           <li>
-            <i class="fa-solid fa-circle-user text-4xl pr-5 pl-5"></i>
+            <i class="fa-solid fa-right-from-bracket text-2xl pr-5 pl-5 text-[#590c7a] hover:text-red-500"></i>
+            {{-- <i class="fa-solid fa-circle-user text-4xl pr-5 pl-5"></i> --}}
           </li>
         </ul>
       </nav>
@@ -39,6 +40,10 @@
         <h2 class="h-fit font-bold flex align-middle ">ADD TASK<i class="fa-solid fa-square-plus text-2xl  text-center align-middle text-[#590c7a] pl-2"></i></h2>
       </div>
       <div>
+     @if (true)
+    {{ Session::get('user_name') }}
+     <h1></h1>
+@endif
           {{--add via contents/yield --}}
           @yield('content')
       </div>

@@ -34,9 +34,14 @@
       <button class="h-full w-full bg-none p-2"><span class="font-bold">GROUP TASK</span></button>
       
     </div>
-    <div class="h-full w-full p-2 border-2 border-white-solid rounded-[1em]">
-      {{--add via contents/yield --}}
-      @yield('content')
+    <div class="h-full w-full p-2 border-2 border-black-solid rounded-[1em]">
+      <div class="h-fit w-full p-2 flex flex-row justify-end align-middle border-2 border-black-solid gap-2 text-center items-center">
+        <h2 class="h-fit font-bold flex align-middle ">ADD TASK<i class="fa-solid fa-square-plus text-2xl  text-center align-middle text-[#590c7a] pl-2"></i></h2>
+      </div>
+      <div>
+          {{--add via contents/yield --}}
+          @yield('content')
+      </div>
     </div>
   </main>
   <footer class="h-22 w-screen bg-[#590c7a]"></footer>

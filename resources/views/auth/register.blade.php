@@ -28,15 +28,11 @@
       </nav>
     </div>
   </header>
-  @if ($errors->any())
-      <ul>
-          @foreach ($errors->all() as $error)
-              <li style="color:red;">{{ $error }}</li>
-          @endforeach
-      </ul>
-  @endif
-  
+
   <main class="h-[90dvh] w-full flex justify-center align-middle dark:bg-[#201f21]">
+
+
+  
     <div class="h-fit w-fit shadow-black shadow-md self-center p-5 rounded-[2em]">
 
       <form method="get" action="{{route('create.account')}}" class="h-fit w-full flex flex-col gap-5 justify-center items-center">
@@ -45,7 +41,13 @@
             <h1 class="font-bold text-2xl dark:text-[#f3edf5]">WELCOM TO <span class="text-[#590c7a]">TASKNOTES</span></h1>
             <h2 class="font-bold text-[1.5rem] dark:text-[#f3edf5]">CREATE AN ACCOUNT</h2>
         </div>
-
+                  @if ($errors->any())
+      <ul>
+          @foreach ($errors->all() as $error)
+              <li style="color:red;" class="">{{ $error }}</li>
+          @endforeach
+      </ul>
+  @endif
         <div class="w-full flex relative ">
           <input type="text" name='name' required class="w-full dark:text-[rgb(243,237,245)] border-1 border-[#590c7a]-solid p-2 font-semibold outline-[#590c7a] text-1xl">
           <label for="" class="bg-white absolute top-[-6] left-4 dark:bg-[#201f21] dark:text-[#f3edf5] font-semibold -translate-y-3 z-9999">NAME</label></div>

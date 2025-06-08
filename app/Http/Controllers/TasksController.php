@@ -5,31 +5,39 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Task;
 
+
 class TasksController extends Controller
 {
 
     public function index(){
-        $addtaskmodular = 'hidden';
-        $darkmode = '#343038';
-        return view('layouts/app',['darkmode'=>'#343038']);
+        $tasks = Task::all();
+        return view('layouts/app',compact('tasks'));
     }
 
-    public function insert(Request $request){
+    // public function get($id){
+    //     $qry=Task::where('id', $id)->first();
+    //     dd($qry);
+    // }
+
+    public function store(Request $request){
 
         $request -> validate([
-            'title' => 'required|max:20',
+            'title' => 'required|max:50',
+        'description' => 'nullable|string',
+        'completed' => 'required|boolean',
+        'due_date' => 'nullable|date',
         ]);
 
         $qry = Task::insert([
             'title' => $request->title,
-            'order' => $request->order,
             'description' => $request->description,
-            'completed' => $request->completed,
-            'due_date' => $request->due_date
+            'completed' => $request->has('completed'),
+            'due_date' => $request->due_date,
+            'user_id' => $request->user_id
         ]);
 
         if($qry){
-            return $addtaskmodular = 'hidden';
+            return redirect(route('home'))->with('status', 'Registered Succesfully');
         }
 
     }

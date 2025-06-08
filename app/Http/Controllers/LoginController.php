@@ -45,13 +45,6 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
     
-            // Store custom session values
-            Session::put('user_name', Auth::user()->name);
-            Session::put('login_time', now());
-    
-            // Flash message (temporary - only available in next request)
-            Session::flash('status', 'Logged in successfully!');
-    
             return redirect(route('home'));
         }
     

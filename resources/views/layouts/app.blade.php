@@ -31,6 +31,7 @@
   </header>
   <main class="h-[80dvh] w-screen dark:bg-[#201f21] flex flex-col gap-2 p-6">
     <div class="h-fit w-full border-2 border-white-solid dark:border-[#590c7a] rounded-full grid grid-cols-2 overflow-hidden">
+
       <button class="h-full w-full bg-[#590c7a] dark:text-[#f3edf5] p-2"><span class="font-bold text-white">TASK</span></button>
       <button class="h-full w-full bg-none p-2"><span class="font-bold dark:text-[#f3edf5]">GROUP TASK</span></button>
       
@@ -44,6 +45,37 @@
           @yield('content')
       </div>
     </div>
+
+    <div class="h-full w-full absolute top-0 left-0 flex justify-center items-center align-middle bg-[#20212166]" >
+        <div class="h-fit w-[30em] p-5 rounded-md bg-[#ffffff]">
+
+          <form action="{{route('add.task')}}" method="post" class="flex flex-col gap-5">
+            @csrf
+            <h1 class="font-bold">ADD TASK</h1>
+            <hr>
+            <div class="flex items-center align-middle gap-2">
+              <label for="" class="font-bold">TITLE:</label>
+              <input type="text" name="title" id="" class="h-[2em] w-full rounded-sm outline-[#590c7a] border-1 border-solid-[#590c7a] p-4 font-semibold" required >
+            </div>
+            
+            <div class="flex flex-col align-middle gap-2">
+              <label for="" class="font-bold">DESCRITPION:</label>
+              <textarea name="description" id="" class="h-[10em] w-full rounded-sm outline-[#590c7a] border-1 border-solid-[#590c7a] p-4 font-semibold resize-none" ></textarea>
+            </div>
+
+            <div class="flex flex-col">
+              <label for="" class=" w-full font-bold">DUE DATE:</label>
+              <input type="datetime-local" name="due_date" id="" class="h-[2em] w-full rounded-sm outline-[#590c7a] border-1 border-solid-[#590c7a] p-4 font-semibold resize-none justify-self-start">
+            </div>
+            <input type="number" name='user_id' value="{{Auth::id()}}">
+            <input type="checkbox" name="completed" id="completed">
+            <input type="submit" value="ADD" class="font-bold bg-[#590c7a] hover:bg-[#6a198c] p-4 rounded-sm text-[#ffffff]">
+
+          </form>
+        </div>
+    </div>
+
+
   </main>
   <footer class="h-22 w-screen bg-[#590c7a]"></footer>
 </body>

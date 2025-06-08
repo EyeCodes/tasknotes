@@ -28,24 +28,24 @@
       </nav>
     </div>
   </header>
-  @if ($errors->any())
-      <ul>
-          @foreach ($errors->all() as $error)
-              <li style="color:red;">{{ $error }}</li>
-          @endforeach
-      </ul>
-  @endif
+
   <main class="h-[90dvh] w-full flex justify-center align-middle dark:bg-[#201f21]">
 
     <div class="h-fit w-fit shadow-black shadow-md self-center   p-5 rounded-[2em]">
-
+ 
       <form action="{{route('user.login')}}" method="post" class="h-fit w-full flex flex-col gap-5 justify-center items-center">
         @csrf
         <div class="flex flex-col justify-center align-middle items-center"> 
             <h1 class="font-bold text-2xl dark:text-[#f3edf5]">WELCOM TO <span class="text-[#590c7a]">TASKNOTES</span></h1>
             <h2 class="font-bold text-[1.5rem] dark:text-[#f3edf5]">LOGIN</h2>
         </div>
-
+            @if ($errors->any())
+      <ul>
+          @foreach ($errors->all() as $error)
+              <li style="color:red;">{{ $error }}</li>
+          @endforeach
+      </ul>
+  @endif
         <div class="w-full flex relative ">
           <input type="email" name="email" required class="w-full dark:text-[#f3edf5]  border-1 border-[#590c7a]-solid p-2 font-semibold outline-[#590c7a] text-1xl"><label for="" class="bg-white dark:bg-[#201f21] dark:text-[#f3edf5] absolute top-[-6] left-4 font-semibold -translate-y-3 z-9999">EMAIL</label></div>
 

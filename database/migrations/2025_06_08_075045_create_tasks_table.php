@@ -13,13 +13,13 @@ return new class extends Migration
     {
     Schema::create('tasks', function (Blueprint $table) {
             $table->id(); // Primary key
-            $table->integer('order');
             $table->string('title'); // Task title
             $table->text('description')->nullable(); // Optional task description
             $table->boolean('completed')->default(false); // Task completion status
             $table->timestamp('due_date')->nullable(); // Optional due date
             $table->unsignedBigInteger('user_id'); // Foreign key to the user who created the task
-            $table->timestamps(); // created_at and updated_at timestamps
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         
             // Set up foreign key constraint with 'users' table
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

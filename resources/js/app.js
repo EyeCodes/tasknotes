@@ -1,5 +1,6 @@
 import './bootstrap';
 
+ document.addEventListener('DOMContentLoaded', ()=>{
 //darkmode
 let darkmode = localStorage.getItem("darkmode")
 const themeBtn = document.getElementById("theme")
@@ -27,3 +28,4 @@ themeBtn.addEventListener("click", ()=>{
   console.log(darkmode)
 
 })
+ })

@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {{-- <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}"> --}}
+
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
  <link href="/src/app.css" rel="stylesheet">
    <!-- Styles / Scripts -->
@@ -24,7 +23,7 @@
               <i class="fa-solid fa-circle-half-stroke  text-[#8f1bb5]  dark:text-[#fff387] text-2xl pr-5 pl-5" id="theme"></i>
           </li>
           <li>
-              <a href="{{route('user.logout')}}"> <i class="fa-solid fa-right-from-bracket text-2xl pr-5 pl-5 text-[#8f1bb5] hover:text-[#e61d19]"></i></a>
+              <a href="{{route('user.logout')}}"> <i class="fa-solid fa-right-from-bracket text-2xl pr-5 pl-5 text-[#8f1bb5] transition-colors duration-100 ease-in-out hover:text-[#e61d19]"></i></a>
             {{-- <i class="fa-solid fa-circle-user text-4xl pr-5 pl-5"></i> --}}
           </li>
         </ul>
@@ -42,7 +41,7 @@
     <div class="h-full w-full overflow-hidden border-2 border-black-solid dark:border-[#8f1bb5] rounded-[1em] overflow-y-scroll overflow-x-hidden no-scrollbar ">
 
       <div class="h-fit w-full p-4 flex flex-row bg-[#fffcff] dark:bg-[#201f21] justify-end align-middle gap-2 text-center items-center sticky top-0">
-        <h2 class="h-fit font-bold flex align-middle dark:text-[#f3edf5] hover:text-[#6a198c]" id="add-task">ADD TASK<i class="fa-solid fa-square-plus text-2xl  text-center align-middle text-[#8f1bb5] pl-2"></i></h2>
+        <h2 class="h-fit font-bold flex align-middle dark:text-[#f3edf5] transition-colors duration-100 ease-in-out hover:text-[#8f1bb5]" id="add-task">ADD TASK<i class="fa-solid fa-square-plus text-2xl  text-center align-middle text-[#8f1bb5] pl-2"></i></h2>
       </div>
       <div class="h-fit ">
           {{--add via contents/yield --}}

@@ -10,6 +10,7 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
 }
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -21,7 +22,15 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
         --bg-ff:  #590c7a;
 }
+  input:focus{
+    outline: #8f1bb5;
+  }
 
-.hide{
-    display: hidden;
-}
+  .input-autofill:-webkit-autofill {
+    /* Autofilled inputs */
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0px 1000px #201f21 inset !important; 
+  -webkit-text-fill-color: #f3edf5 !important;
+  transition: background-color 5000s ease-in-out 0s;
+  border-color: #f3edf5;
+  }

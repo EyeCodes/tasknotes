@@ -47,7 +47,7 @@
       </ul>
   @endif
         <div class="w-full flex relative ">
-          <input type="email" name="email" required class="w-full dark:text-[#f3edf5]  border-1 border-[#590c7a]-solid p-2 font-semibold outline-[#590c7a] text-1xl"><label for="" class="bg-white dark:bg-[#201f21] dark:text-[#f3edf5] absolute top-[-6] left-4 font-semibold -translate-y-3 z-9999">EMAIL</label></div>
+          <input type="email" name="email" required class="w-full dark:text-[#f3edf5] border-1 border-[#590c7a]-solid p-2 font-semibold outline-[#590c7a] text-1xl"><label for="" class="bg-white dark:bg-[#201f21] dark:text-[#f3edf5] absolute top-[-6] left-4 font-semibold -translate-y-3 z-9999">EMAIL</label></div>
 
         <div class="w-full flex relative ">
           <input type="password" name="password" required class="w-full  dark:text-[#f3edf5] border-1 border-[#590c7a]-solid p-2 font-semibold outline-[#590c7a] text-1xl"><label for="" class="bg-white dark:bg-[#201f21] dark:text-[#f3edf5] absolute top-[-6] left-4 font-semibold -translate-y-3 z-9999">PASSWORD</label></div>
@@ -57,6 +57,7 @@
       </form>
     </div>
   </main>
+<script src="../../js/app.js"></script>
 
 </body>
 </html>

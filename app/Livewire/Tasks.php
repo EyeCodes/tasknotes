@@ -15,6 +15,19 @@ class Tasks extends Component
         $this->tasks = Task::where('user_id', Auth::id())->get(); // or DB::table('tasks')->get();
     }
 
+    public function deleteTask($taskId)
+    {
+        $task = Task::find($taskId);
+
+        if ($task && $task->user_id === Auth::id()) {
+            $task->delete();
+            $this->loadTasks();
+            session()->flash('message', 'Task deleted successfully!');
+        } else {
+            session()->flash('error', 'Task not found or unauthorized.');
+        }
+    }
+
     #[On('taskAdded')]
     public function loadTasks()
 {

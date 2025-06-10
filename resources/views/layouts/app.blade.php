@@ -36,11 +36,13 @@
       <button class="h-full w-full bg-none p-2"><span class="font-bold dark:text-[#f3edf5]">GROUP TASK</span></button>
       
     </div>
-    <div class="h-full w-full p-2 border-2 border-black-solid dark:border-[#8f1bb5] rounded-[1em]">
-      <div class="h-fit w-full p-2 flex flex-row justify-end align-middle gap-2 text-center items-center">
+
+    <div class="h-full w-full overflow-hidden border-2 border-black-solid dark:border-[#8f1bb5] rounded-[1em] overflow-y-scroll overflow-x-hidden no-scrollbar ">
+
+      <div class="h-fit w-full p-4 flex flex-row bg-[#fffcff] dark:bg-[#201f21] justify-end align-middle gap-2 text-center items-center sticky top-0">
         <h2 class="h-fit font-bold flex align-middle dark:text-[#f3edf5] hover:text-[#6a198c]" id="add-task">ADD TASK<i class="fa-solid fa-square-plus text-2xl  text-center align-middle text-[#8f1bb5] pl-2"></i></h2>
       </div>
-      <div>
+      <div class="h-fit ">
           {{--add via contents/yield --}}
           @yield('content')
 

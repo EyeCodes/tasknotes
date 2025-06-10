@@ -11,7 +11,6 @@ class TaskForm extends Component
     public $title;
     public $description;
     public $due_date;
-
       public function submit()
     {
         $validated = $this->validate([

@@ -21,6 +21,8 @@
             Today ({{ $due->format('g:i A') }})
         @elseif ($due->isTomorrow())
             Tomorrow ({{ $due->format('g:i A') }})
+        @elseif ($due->isPast())
+                MISSED ({{ $due->format('F j, Y g:i A') }})
         @else
             {{ $due->format('F j, Y g:i A') }}
         @endif
@@ -30,15 +32,16 @@
             </span>
             
             <nav class=" flex gap-1 justify-end">
-                <button onclick="updateForm(1)"
-                    class="p-4 bg-[#3cbd2b] text-[#fffcff]">
+                <button wire:click="updateForm({{$task->id}})" onclick="updateForm()" class="p-4 bg-[#3cbd2b] text-[#fffcff]">
                     <i class="fa-solid fa-pen"></i>
                 </button>
-                <button wire:click="deleteTask({{ $task->id }})" onclick="return confirm('Are you sure you want to delete this task?')"
-                    class="p-4 bg-[#e61d19] text-[#fffcff]">
+                <button wire:click="deleteTask({{ $task->id }})" class="p-4 bg-[#e61d19] text-[#fffcff]">
                     <i class="fa-solid fa-trash"></i>
                 </button>
-            </nav>
+                <button wire:click="markTaskComplete({{ $task->id }})" class="p-4 bg-[#8f1bb5] text-[#fffcff]">
+                    <i class="fa-regular fa-circle-check"></i>
+                </form>
+                </nav>
 
             </div>
         </li>

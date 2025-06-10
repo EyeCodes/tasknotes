@@ -4,4 +4,5 @@
 @livewire('tasks')
 @livewire('taskform')
 @livewire('task-update')
+@livewire('task-complete')
 @endsection

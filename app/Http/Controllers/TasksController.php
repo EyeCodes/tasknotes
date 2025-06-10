@@ -10,7 +10,7 @@ class TasksController extends Controller
 {
 
     public function index(){
-        $tasks = Tasks::all();
+        $tasks = Tasks::where('completed', 0)->get();
         return view('pages/taskpage',compact('tasks'));
     }
 

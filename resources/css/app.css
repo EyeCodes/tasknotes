@@ -13,3 +13,7 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
         --bg-ff:  #590c7a;
 }
+
+.hide{
+    display: hidden;
+}

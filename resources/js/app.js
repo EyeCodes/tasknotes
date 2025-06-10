@@ -28,4 +28,16 @@ themeBtn.addEventListener("click", ()=>{
   console.log(darkmode)
 
 })
- })
+  })
+
+const addTask = document.getElementById('add-task')
+const closebtn = document.getElementById('close-task-form')
+const formbg = document.getElementById('full-bg')
+
+addTask.addEventListener('click', ()=>{
+  (formbg.style.display = 'none') == true ? formbg.style.display = 'none' : formbg.style.display = 'flex'
+})
+
+closebtn.addEventListener('click', ()=>{
+  formbg.style.display = 'none'
+})

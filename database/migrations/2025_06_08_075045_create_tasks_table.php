@@ -13,7 +13,7 @@ return new class extends Migration
     {
     Schema::create('tasks', function (Blueprint $table) {
             $table->id(); // Primary key
-            $table->unsignedBigInteger('user_id'); // Foreign key to the user who created the task
+            $table->unsignedBigInteger('user_id'); 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('title'); // Task title
             $table->text('description')->nullable(); // Optional task description

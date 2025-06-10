@@ -7,21 +7,20 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class Task extends Model
+class Tasks extends Model
 {
     use HasFactory;
-
+    protected $table = 'tasks';
     protected $fillable = [
         'title',
         'user_id',
         'description',
-        'completed',
         'due_date',
     ];
 
     // Define inverse relationship: Task belongs to a User
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Tasks::class);
     }
 }

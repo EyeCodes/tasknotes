@@ -8,10 +8,10 @@
                 <h1 class="min-w-[10em] font-bold ">{{$task->title}}</h1>
 
                 <div class="flex gap-3 bg-[#8f1bb5] rounded-sm p-2 ">
-                    <i class="fa-solid fa-note-sticky text-[#fffcff]"> </i><textarea name="" id="" class='h-[2em] text-[#fffcff] overflow-ellipsis resize-none ' >{{$task->description}}</textarea>
+                    <i class="fa-solid fa-note-sticky text-[#fffcff]"> </i><textarea name="" id="" class='h-[2em] w-full no-scrollbar text-[#fffcff] overflow-ellipsis resize-none ' >{{$task->description}}</textarea>
                 </div>
 
-                <span class="text-center">Due Date: 
+                <span class="text-center"><i class="fa-solid fa-calendar-days text-[#8f1bb5]"></i>  Due Date: 
                 @if ($task->due_date)
         @php
             $due = \Carbon\Carbon::parse($task->due_date);
@@ -29,7 +29,7 @@
     @endif
             </span>
             
-            <nav class="border-1 flex gap-1 justify-end">
+            <nav class=" flex gap-1 justify-end">
                 <button wire:click="deleteTask({{ $task->id }})" onclick="return confirm('Are you sure you want to delete this task?')"
                     class="p-4 bg-[#3cbd2b] text-[#fffcff]">
                     <i class="fa-solid fa-pen"></i>

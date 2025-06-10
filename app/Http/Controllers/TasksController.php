@@ -29,11 +29,11 @@ class TasksController extends Controller
         ]);
 
         $qry = Task::insert([
+            'user_id' => $request->user_id,
             'title' => $request->title,
             'description' => $request->description,
             'completed' => $request->has('completed'),
             'due_date' => $request->due_date,
-            'user_id' => $request->user_id
         ]);
 
         if($qry){

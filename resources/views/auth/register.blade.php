@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png"sizes="180x180" href="/favico-icon.png">
   <link href="/src/app.css" rel="stylesheet">
 
     <!-- Styles / Scripts -->
@@ -19,10 +20,10 @@
       <nav>
         <ul class="flex decoration-0 items-center">
           <li>
-              <i class="fa-solid fa-circle-half-stroke dark:text-[#fff387] text-2xl pr-5 pl-5" id="theme"></i>
+              <i class="fa-solid fa-circle-half-stroke text-[#8f1bb5] dark:text-[#fff387] text-2xl pr-5 pl-5" id="theme"></i>
           </li>
           <li>
-            <button class="bg-[#00ff6e] hover:bg-[#4aff98] p-4 text-center rounded-full "><a href="{{route(name: 'login.form')}}">SIGN IN</a></button>
+           <a href="{{route(name: 'login.form')}}"> <button class="bg-[#00ff6e] hover:bg-[#4aff98] p-4 text-center rounded-full ">SIGN IN</button></a>
           </li>
         </ul>
       </nav>

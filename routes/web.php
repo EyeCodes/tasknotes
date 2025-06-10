@@ -15,7 +15,11 @@ Route::get('/register/creating', [AUTH::class, 'register'])->name('create.accoun
 // Grouped routes with authUser middleware
 
 // Route::get('/', [TC::class, 'index'])->name('home')->middleware(authUser::class);
-Route::get('/', function(){
+Route::get('/tasks', function(){
   return view('pages.taskpage');
 })->name('add.task')->middleware(authUser::class);
+
+Route::get('/completed', function(){
+  return view('pages.completetaskpage');
+})->name('completed.task')->middleware(authUser::class);
 

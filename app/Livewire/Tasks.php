@@ -44,6 +44,22 @@ class Tasks extends Component
     $this->tasks = Task::where('user_id', Auth::id())->where('completed', 0)->get(); // or DB::table('tasks')->get();
 
 }
+
+    protected $listeners = [
+        'goToTasks' => 'handleGoToTasks',
+        'goToCompletedTasks' => 'handleGoToCompletedTasks',
+    ];
+
+    // Handle the redirect when the event is triggered
+    public function handleGoToTasks()
+    {
+        return redirect()->route('add.task');
+    }
+    public function handleGoToCompletedTasks()
+    {
+        return redirect()->route('completed.task');
+    }
+
     public function render()
     {
         return view('livewire.tasks');

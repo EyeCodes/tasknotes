@@ -3,7 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 use Livewire\Attributes\On;
 use App\Models\Tasks;
 class TaskComplete extends Component
@@ -16,8 +16,8 @@ class TaskComplete extends Component
         $this->taskId = $task['id'];
         $this->tasks = Tasks::findOrFail($task['id']);
         $this->tasks ->update([
-            'title' => 'IM TIRED',
             'completed' => 1,
+            'due_date' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
 
         $this->dispatch('taskAdded');

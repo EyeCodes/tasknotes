@@ -26,7 +26,7 @@ class AuthUser
         } else {
             // If the user is logged in and trying to access login or register routes
             if (in_array($route, ['login.form', 'register.form'])) {
-                return redirect()->route('home');
+                return redirect()->route('add.task');
             }
         }
 
